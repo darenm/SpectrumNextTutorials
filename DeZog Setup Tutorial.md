@@ -259,4 +259,4 @@ Here is my **tasks.json** in case anyone is interested:
 
 * vscode vsix file: [https://github.com/maziac/DeZog/releases/tag/v1.2.7](https://github.com/maziac/DeZog/releases/tag/v1.2.7)
 * CSpect plugin: [https://github.com/maziac/DeZogPlugin/releases/tag/v0.9.0](https://github.com/maziac/DeZogPlugin/releases/tag/v0.9.0)
-Usage documentation: [https://github.com/maziac/DeZog/blob/develop/documentation/Usage.md](https://github.com/maziac/DeZog/blob/develop/documentation/Usage.md)
+* Usage documentation: [https://github.com/maziac/DeZog/blob/develop/documentation/Usage.md](https://github.com/maziac/DeZog/blob/develop/documentation/Usage.md)
