@@ -169,9 +169,9 @@ In order to configure Visual Studio Code to launch DeZog when you want to debug,
 ### Debugging a Project
 
 > **Assumptions**:
-> My main assembly file is **Project.asm**
-> The listing file **Project.lst** is generated in the same **src** folder as the **Project.asm** file
-> I output **project.nex** and **project.map** to the root of my workspace
+> * My main assembly file is **Project.asm**.
+> * The listing file **Project.lst** is generated in the same **src** folder as the **Project.asm** file.
+> * I output **project.nex** and **project.map** to the root of my workspace.
 
 In order to start debugging a session, I found the following:
 
