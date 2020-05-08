@@ -70,7 +70,7 @@ In order to configure Visual Studio Code to launch DeZog when you want to debug,
 
 1. If the **launch.json** file exists, open it, otherwise add a new file to the **.vscode** folder and name it **launch.json**.
 
-1. The **DeZog** Author has document the configuration to be added [here](https://github.com/maziac/DeZog/blob/develop/documentation/Usage.md).However, the entry I am using is shown below:
+1. The **DeZog** Author has documented the configuration to be added [here](https://github.com/maziac/DeZog/blob/develop/documentation/Usage.md). However, the entry I am using is shown below:
 
     ```json
     {
