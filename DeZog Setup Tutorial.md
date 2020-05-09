@@ -8,7 +8,7 @@ This tutorial assumes the following:
 
 * Visual Studio Code has been installed
 * You have downloaded **CSpect** - available [here](https://cspect.org).
-* You are using **sjasmplus** as your assembler
+* You are using **sjasmplus** as your assembler - available [here](https://github.com/z00m128/sjasmplus).
 
 ## Installing DeZog Components on Windows
 
@@ -54,11 +54,11 @@ My project layout is as follows:
 * **MyCoolApp**
   * **.vscode** - contains my tasks.json and launch.json file
   * **project**
-    * **bin** - contains **CSpect.exe**, **hdfmonkey.exe**, **sjasmpluse.exe** as well as the **DeZogPlugin.dll** and **DeZogPlugin.dll.config** files.
+    * **bin** - contains **CSpect.exe**, **hdfmonkey.exe**, **sjasmplus.exe** as well as the **DeZogPlugin.dll** and **DeZogPlugin.dll.config** files.
     * **data** - binary data files I include in my app
     * **etc** - nothing at all :)
     * **src** - all of the **asm** files and the **lst** file created during compilation.
-  * **sdcard** - contains the **cspect-next-2gb.img** SD card image and the **enNextZX.rom** and **enNxtmmc.rom** rom files used with CSpect.
+  * **sdcard** - contains the **cspect-next-2gb.img** SD card image and the **enNextZX.rom** and **enNxtmmc.rom** ROM files used with CSpect.
 
 ### Configuring DeZog
 
@@ -131,7 +131,7 @@ In order to configure Visual Studio Code to launch DeZog when you want to debug,
 
     * **reverseDebugInstructionCount**: The number of lines you can step back during reverse debug. Use 0 to disable.
  
-    * **codeCoverageEnabled**: If enabled (default) code coverage information is displayed. I.e. allsource codes lines that have been executed are highlighted in green. You can clear the code coverage display with the command palette "dezog: Clear current code coverage decoration".
+    * **codeCoverageEnabled**: If enabled (default) code coverage information is displayed. I.e. all source code lines that have been executed are highlighted in green. You can clear the code coverage display with the command palette "dezog: Clear current code coverage decoration".
 
     * **commandsAfterLaunch**: Here you can enter commands that are executed right after the launch and connection of the debugger. These commands are the same as you can enter in the debug console. E.g. you can use "-sprites" to show all sprites in case of a ZX Next program. See [Debug Console](#debug-console).
  
