@@ -202,7 +202,7 @@ In order to start debugging a session, I found the following:
 In my projects I have 3 tasks:
 
 * **Compile Assembly** - mapped to the **Ctrl+Shift+B** shortcut, this compiles the currently focused file with sjasmplus
-* **Update SDCard** - copies the ouput (**project.nex**) to the SD Card
+* **Update SDCard** - copies the output (**project.nex**) to the SD Card image.
 * **Launch CSpect** - runs **Compile Assembly** and **Update SDCard** then launches CSpect in break mode
 
 Here is my **tasks.json** in case anyone is interested:
