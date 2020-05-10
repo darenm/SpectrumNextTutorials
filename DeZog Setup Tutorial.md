@@ -92,10 +92,8 @@ In order to configure Visual Studio Code to launch DeZog when you want to debug,
 
                 ],
                 "startAutomatically": false,
-                "skipInterrupt": false,
                 "history": {
-                    "reverseDebugInstructionCount": 10000,
-                    "codeCoverageEnabled": true
+                    "reverseDebugInstructionCount": 10000
                 },
                 "commandsAfterLaunch": [
                     //"-sprites",
@@ -126,12 +124,7 @@ In order to configure Visual Studio Code to launch DeZog when you want to debug,
  
     * **startAutomatically**: If true the program is started directly after loading. If false the program stops after launch. (Default=true). Please note: If this is set to true and a .tap file is loaded it will stop at address 0x0000 as this is where ZEsarUX tape load emulation starts.
 
-    * **skipInterrupt**: Is passed to ZEsarUX at the start of the debug session.
-        If true ZEsarUX does not break in interrupts (on manual break)
-
     * **reverseDebugInstructionCount**: The number of lines you can step back during reverse debug. Use 0 to disable.
- 
-    * **codeCoverageEnabled**: If enabled (default) code coverage information is displayed. I.e. all source code lines that have been executed are highlighted in green. You can clear the code coverage display with the command palette "dezog: Clear current code coverage decoration".
 
     * **commandsAfterLaunch**: Here you can enter commands that are executed right after the launch and connection of the debugger. These commands are the same as you can enter in the debug console. E.g. you can use "-sprites" to show all sprites in case of a ZX Next program. See [Debug Console](#debug-console).
  
