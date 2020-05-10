@@ -80,22 +80,16 @@ In order to configure Visual Studio Code to launch DeZog when you want to debug,
                 "request": "launch",
                 "name": "DeZog",
                 "remoteType": "cspect",
-                "zsim": {
-                    "loadZxRom": true
-                },
                 "listFiles": [
                     {
                         "path": "${workspaceRoot}\\project\\src\\Project.lst",
                         "asm": "sjasmplus",
                         "mainFile": "${workspaceRoot}\\project\\src\\Project.asm"
                     },
-
                 ],
                 "startAutomatically": false,
-                "skipInterrupt": false,
                 "history": {
-                    "reverseDebugInstructionCount": 10000,
-                    "codeCoverageEnabled": true
+                    "reverseDebugInstructionCount": 10000
                 },
                 "commandsAfterLaunch": [
                     //"-sprites",
@@ -124,14 +118,9 @@ In order to configure Visual Studio Code to launch DeZog when you want to debug,
 
     * **listFiles**: Note I have specified the full path to the **Project.lst** and **Project.asm** files using `${workspaceRoot}` macro and also note the use of `\\` to escape the backslashes. **<== Changed**
  
-    * **startAutomatically**: If true the program is started directly after loading. If false the program stops after launch. (Default=true). Please note: If this is set to true and a .tap file is loaded it will stop at address 0x0000 as this is where ZEsarUX tape load emulation starts.
-
-    * **skipInterrupt**: Is passed to ZEsarUX at the start of the debug session.
-        If true ZEsarUX does not break in interrupts (on manual break)
+    * **startAutomatically**: If true the program is started directly after loading. If false the program stops after launch. (Default=true).
 
     * **reverseDebugInstructionCount**: The number of lines you can step back during reverse debug. Use 0 to disable.
- 
-    * **codeCoverageEnabled**: If enabled (default) code coverage information is displayed. I.e. all source code lines that have been executed are highlighted in green. You can clear the code coverage display with the command palette "dezog: Clear current code coverage decoration".
 
     * **commandsAfterLaunch**: Here you can enter commands that are executed right after the launch and connection of the debugger. These commands are the same as you can enter in the debug console. E.g. you can use "-sprites" to show all sprites in case of a ZX Next program. See [Debug Console](#debug-console).
  
@@ -157,7 +146,7 @@ In order to configure Visual Studio Code to launch DeZog when you want to debug,
 
         > **Note**: topOfStack: instead of a label you can also use a fixed number.
 
-    * **load**: The .nex, .sna (or .tap) file to load. **<== Changed**
+    * **load**: The .nex, .sna file to load. **<== Changed**
 
     * **smallValuesMaximum**: DeZog format numbers (labels, constants) basically in 2 ways depending on their size: 'small values' and 'big values'. Small values are typically constants like the maximum number of something you defined in your asm file.
     Big values are typically addresses. Here you can give the boundary between these 2 groups. bigValues usually also show their contents, i.e. the value at the address along the address itself. Usually 512 is a good boundary value.
