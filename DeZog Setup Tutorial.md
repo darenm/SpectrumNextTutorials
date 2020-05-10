@@ -122,7 +122,7 @@ In order to configure Visual Studio Code to launch DeZog when you want to debug,
 
     * **listFiles**: Note I have specified the full path to the **Project.lst** and **Project.asm** files using `${workspaceRoot}` macro and also note the use of `\\` to escape the backslashes. **<== Changed**
  
-    * **startAutomatically**: If true the program is started directly after loading. If false the program stops after launch. (Default=true). Please note: If this is set to true and a .tap file is loaded it will stop at address 0x0000 as this is where ZEsarUX tape load emulation starts.
+    * **startAutomatically**: If true the program is started directly after loading. If false the program stops after launch. (Default=true).
 
     * **reverseDebugInstructionCount**: The number of lines you can step back during reverse debug. Use 0 to disable.
 
@@ -150,7 +150,7 @@ In order to configure Visual Studio Code to launch DeZog when you want to debug,
 
         > **Note**: topOfStack: instead of a label you can also use a fixed number.
 
-    * **load**: The .nex, .sna (or .tap) file to load. **<== Changed**
+    * **load**: The .nex, .sna file to load. **<== Changed**
 
     * **smallValuesMaximum**: DeZog format numbers (labels, constants) basically in 2 ways depending on their size: 'small values' and 'big values'. Small values are typically constants like the maximum number of something you defined in your asm file.
     Big values are typically addresses. Here you can give the boundary between these 2 groups. bigValues usually also show their contents, i.e. the value at the address along the address itself. Usually 512 is a good boundary value.
