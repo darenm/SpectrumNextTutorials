@@ -80,16 +80,12 @@ In order to configure Visual Studio Code to launch DeZog when you want to debug,
                 "request": "launch",
                 "name": "DeZog",
                 "remoteType": "cspect",
-                "zsim": {
-                    "loadZxRom": true
-                },
                 "listFiles": [
                     {
                         "path": "${workspaceRoot}\\project\\src\\Project.lst",
                         "asm": "sjasmplus",
                         "mainFile": "${workspaceRoot}\\project\\src\\Project.asm"
                     },
-
                 ],
                 "startAutomatically": false,
                 "history": {
