@@ -54,7 +54,7 @@ My project layout is as follows:
 * **MyCoolApp**
   * **.vscode** - contains my tasks.json and launch.json file
   * **project**
-    * **bin** - contains **CSpect.exe**, **hdfmonkey.exe**, **sjasmplus.exe** as well as the **DeZogPlugin.dll** and **DeZogPlugin.dll.config** files.
+    * **bin** - contains **CSpect.exe** and all the associated files such as **ay8912.dll** etc., **hdfmonkey.exe**, **sjasmplus.exe** as well as the **DeZogPlugin.dll** and **DeZogPlugin.dll.config** files.
     * **data** - binary data files I include in my app
     * **etc** - nothing at all :)
     * **src** - all of the **asm** files and the **lst** file created during compilation.
@@ -178,11 +178,15 @@ In order to start debugging a session, I found the following:
     "command": "${workspaceRoot}\\project\\bin\\hdfmonkey put ${workspaceRoot}\\sdcard\\cspect-next-2gb.img project.nex",
     ```
 
+    > **Note**: This step is optional - I like to have the nex file deployed to the image so I can run it with the CSpect emulator configured as close to a real Next as possible.
+
 1. CSpect must be already running so that DeZog can connect to it. I use the `break; nop; nop` pattern as the first line of my assembly code and then launch CSpect with the following command:
 
     ```json
     "command": "${workspaceRoot}\\project\\bin\\CSpect.exe -w4 -r -s14 -tv -esc -brk -basickeys -zxnext -nextrom -map=${workspaceRoot}\\project.map -mmc=${workspaceRoot}\\sdcard\\cspect-next-2gb.img project.nex",
     ```
+
+    > **Note**: It is not essential to specify the nex file in the command-line - some have encountered locking issues.
 
 1. Press **F5** to launch the DeZog debugger and connect to CSpect.
 
