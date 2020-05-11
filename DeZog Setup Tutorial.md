@@ -170,7 +170,9 @@ In order to start debugging a session, I found the following:
     "command": "${workspaceRoot}\\project\\bin\\sjasmplus ${file} --zxnext=cspect --msg=all --fullpath --lst",
     ```
 
-    > **Note**: I use the **Z80 Macro-Assembler** extension which provides syntax highlighting and problem matchers for sjasmplus and other assemblers - the `--fullpath` switch causes any compilation errors to include the full path to the source file, enabling the vscode problem list to show the errors and navigate directly to the file/line when clicked.
+    ~~**Note**: I use the **Z80 Macro-Assembler** extension which provides syntax highlighting and problem matchers for sjasmplus and other assemblers - the `--fullpath` switch causes any compilation errors to include the full path to the source file, enabling the vscode problem list to show the errors and navigate directly to the file/line when clicked.~~
+
+    > **Note**: I have switched to use the **ASM Code Lens** extension and have added an explicit problem matcher to the **Compile Assembly** task below.
 
 1. The output of the compilation (I use the **nex** format) must be copied to the SD Card Image:
 
@@ -218,9 +220,16 @@ Here is my **tasks.json** in case anyone is interested:
             "presentation": {
                 "reveal": "always",
             },
-            "problemMatcher": [
-                "$errmatcher-sjasmplus"
-            ]
+            "problemMatcher": {
+                "fileLocation": "autoDetect",
+                "pattern": {
+                    "regexp": "^(.*)\\(([0-9]+)\\): (error|warning):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "severity": 3,
+                    "message": 4
+                }
+            }
         },
         {
             "label": "Update SDCard",
@@ -228,10 +237,7 @@ Here is my **tasks.json** in case anyone is interested:
             "command": "${workspaceRoot}\\project\\bin\\hdfmonkey put ${workspaceRoot}\\sdcard\\cspect-next-2gb.img project.nex",
             "presentation": {
                 "reveal": "always",
-            },
-            "problemMatcher": [
-                "$errmatcher-sjasmplus"
-            ]
+            }
         },
         {
             "label": "Launch CSpect",
@@ -241,12 +247,13 @@ Here is my **tasks.json** in case anyone is interested:
             "dependsOn": [
                 "Compile Assembly",
                 "Update SDCard"
-            ],
-            "problemMatcher": []
+            ]
         }
     ]
 }
 ```
+
+Additionally, I add a **ctrl+shift+c** shortcut that runs the **Launch CSpect** task. 
 
 ## References
 
